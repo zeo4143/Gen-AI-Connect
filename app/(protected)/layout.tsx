@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import NavItems from "@/components/nav-items";
 import { AiOutlineDashboard } from "react-icons/ai";
 import ChangeTheme from "@/components/theme/change-theme";
@@ -13,7 +13,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {MdKeyboardArrowLeft, MdLogout, MdOutlineSettings } from "react-icons/md";
+import { MdLogout, MdOutlineSettings } from "react-icons/md";
+import { ChevronLeftIcon } from "@radix-ui/react-icons";
+
 
 
 
@@ -23,6 +25,7 @@ interface ProtectedRoutesLayoutProps {
 
 const ProtectedRoutesLayout = ({ children }: ProtectedRoutesLayoutProps) => {
   const pathName = usePathname();
+  const router = useRouter()
   return (
     <div className="w-full h-full flex">
       <aside className="px-2 border flex flex-col">
@@ -63,7 +66,10 @@ const ProtectedRoutesLayout = ({ children }: ProtectedRoutesLayoutProps) => {
               </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="my-2 p-2 w-[250px]" align="center">
-            <DropdownMenuItem className=" py-2 flex items-center gap-2 font-semibold cursor-pointer">
+            <DropdownMenuItem 
+              className=" py-2 flex items-center gap-2 font-semibold cursor-pointer"
+              onClick={() => router.push("/settings")}
+            >
                 <MdOutlineSettings className="h-5 w-5"/>
                 <span>Settings</span>
               </DropdownMenuItem>
@@ -76,7 +82,6 @@ const ProtectedRoutesLayout = ({ children }: ProtectedRoutesLayoutProps) => {
           </DropdownMenu>
         </footer>
       </aside>
-      {/* <span>hello</span> */}
       <div className="w-full h-full">{children}</div>
     </div>
   );
