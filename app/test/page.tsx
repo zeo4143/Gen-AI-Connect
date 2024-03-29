@@ -4,7 +4,7 @@ import React from "react";
 const TestComponets = () => {
   return (
     <div className=" h-full flex items-center justify-center">
-      <FloatingCard>
+      {/* <FloatingCard>
         <h1>hello</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, iure
@@ -20,7 +20,7 @@ const TestComponets = () => {
           aspernatur distinctio repudiandae nisi culpa voluptates alias, vitae
           labore, quibusdam et unde.
         </p>
-      </FloatingCard>
+      </FloatingCard> */}
     </div>
   );
 };
