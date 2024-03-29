@@ -30,6 +30,7 @@ export default function Home() {
         >
           Coming Soon
         </Button>
+        <small className="pt-1">REcent completed Task: Added Contact form</small>
       </center>
 
       <Hero/>
