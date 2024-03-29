@@ -1,3 +1,5 @@
+// UI - Done Partioally and positioning is not implemented 
+
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Navbar from "./navbar";
 import { useState } from "react";
@@ -16,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <header className="p-4 flex items-center justify-around flex-wrap gap-4">
+    <header className="p-4 border-b shadow-lg flex items-center justify-around flex-wrap gap-4">
       <div className="w-full lg:w-fit flex items-center justify-between">
         <div className="flex items-center">
           <Image src={logo} alt="GenAIConnect Logo" width={50} height={50} />

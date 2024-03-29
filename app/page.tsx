@@ -11,6 +11,7 @@ import Benefits from "@/components/landing-page/benefits";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import LineBreak from "@/components/global/line-break";
+import Contact from "@/components/landing-page/contact";
 
 
 export default function Home() {
@@ -18,11 +19,8 @@ export default function Home() {
 
   return (
     <main className="min-h-full">
-      {/* bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-800 to-black */}
       <title>GenAIConnect - Coming Soon</title>
       <Header/>
-      <LineBreak/>
-
       <center>
         <Button
           variant="secondary"
@@ -30,13 +28,14 @@ export default function Home() {
         >
           Coming Soon
         </Button>
-        <small className="pt-1">REcent completed Task: Added Contact form</small>
+        <p>Recent completed Task: Added 3d floating card & TODO - Implentation of grid on feature cards</p>
       </center>
 
       <Hero/>
      <Features/>
       <ValuePropositions/>
       {/* <Benefits/> */}
+      <Contact/>
       <Footer/>
 
       {/* Typeform Section */}

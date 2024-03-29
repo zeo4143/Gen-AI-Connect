@@ -1,5 +1,4 @@
-import React from "react";
-import { IoRocketSharp } from "react-icons/io5";
+// TODO - Animation
 
 const ValuePropositions = () => {
   return (

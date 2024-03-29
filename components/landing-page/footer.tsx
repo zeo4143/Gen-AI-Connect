@@ -1,17 +1,18 @@
+// Completed - Brandkit Details 
+// Additionalcoming soon
+
 import { MdFacebook } from "react-icons/md";
 import LineBreak from "../global/line-break";
 import { FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { FaSearch } from "react-icons/fa";
 import ContactForm from "./contact-form";
-import { Button } from "../ui/button";
 
 import logo from "@/public/logo.png";
 import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="p-7">
-      <div className="md:mx-[5%] md:my-[20vh] flex items-center justify-center md:justify-between">
+    <footer className="p-7">
+      <div className="md:mx-[5%]  flex items-center justify-center md:justify-between">
         <div className="my-12 flex flex-col ">
           <Image src={logo} alt="GenAIConnect Logo" width={200} height={200} />
           <h1 className="text-3xl font-extrabold">GenAI Connect</h1>
@@ -21,18 +22,7 @@ const Footer = () => {
             <p>123 Street, City, Country</p>
           </div>
         </div>
-        <div className="hidden relative md:block">
-          <small className="ml-5 px-1.5 absolute -top-2.5 bg-background rounded-[20px] text-[rgb(185,168,223)]">
-            Contact
-          </small>
-          <ContactForm>
-            <Button
-              variant="outline"
-              className="px-6 py-8 w-[300px] lg:w-[400px] rounded-[50px] border-[rgb(185,168,223)]"
-            ></Button>
-          </ContactForm>
-          <FaSearch className="w-8 h-8 absolute top-1/2 right-6 -translate-y-1/2 text-[rgb(185,168,223)]" />
-        </div>
+        {/* Add additional footer content for furture purpose */}
       </div>
 
       <div className="flex items-center justify-center">

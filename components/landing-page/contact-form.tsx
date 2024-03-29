@@ -1,3 +1,5 @@
+//  UI Done Functionality Needs to implement
+
 import {
   Dialog,
   DialogContent,
@@ -9,7 +11,14 @@ import {
 } from "../ui/dialog";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../ui/form";
 import { useForm } from "react-hook-form";
 
 import * as z from "zod";
@@ -23,7 +32,6 @@ import {
   SelectValue,
 } from "../ui/select";
 import { Textarea } from "../ui/textarea";
-import TooltipWrapper from "../global/tooltip-wrapper";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 
 interface contactProps {
@@ -34,7 +42,7 @@ const ContactForm = ({ children }: contactProps) => {
   const form = useForm<z.infer<typeof ContactSchema>>({
     resolver: zodResolver(ContactSchema),
     defaultValues: {
-      currentSoftwareIntegration: "no"
+      currentSoftwareIntegration: "no",
     },
   });
 
@@ -43,7 +51,7 @@ const ContactForm = ({ children }: contactProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="h-[80vh] overflow-y-auto" style={{scrollbarWidth : "none"}}>
+      <DialogContent className="h-[100vh] lg:h-[90vh] w-[100%] lg:w-[70dvw]">
         <DialogHeader>
           <DialogTitle className="lg:text-5xl">Contact Us</DialogTitle>
           <DialogDescription className="py-2 ">
@@ -56,10 +64,11 @@ const ContactForm = ({ children }: contactProps) => {
           <form
             autoComplete="off"
             onSubmit={form.handleSubmit(onSubmit)}
-            className=" flex flex-col gap-4"
+            className="px-4 py-8 flex flex-col gap-4 overflow-y-auto"
+            style={{ scrollbarWidth: "none" }}
           >
             {/* contact information */}
-            <div className="flex items-center justify-between gap-16">
+            <div className="flex justify-between gap-8 flex-wrap lg:flex-nowrap">
               <div className="w-full flex flex-col gap-4">
                 <FormField
                   control={form.control}
@@ -70,7 +79,7 @@ const ContactForm = ({ children }: contactProps) => {
                       <FormControl>
                         <Input {...field} placeholder="John Doe" />
                       </FormControl>
-                      <FormMessage/>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -88,7 +97,7 @@ const ContactForm = ({ children }: contactProps) => {
                           placeholder="example@gmail.com"
                         />
                       </FormControl>
-                      <FormMessage/>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -102,12 +111,12 @@ const ContactForm = ({ children }: contactProps) => {
                       <FormControl>
                         <Input {...field} placeholder="GenAI Connect" />
                       </FormControl>
-                      <FormMessage/>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
-            {/* Software Information */}
+              {/* Software Information */}
               <div className="w-full flex flex-col gap-4">
                 <FormField
                   control={form.control}
@@ -118,7 +127,7 @@ const ContactForm = ({ children }: contactProps) => {
                       <FormControl>
                         <Input {...field} placeholder="example" />
                       </FormControl>
-                      <FormMessage/>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -138,7 +147,7 @@ const ContactForm = ({ children }: contactProps) => {
                           <SelectItem value="Saas">SaaS</SelectItem>
                         </SelectContent>
                       </Select>
-                      <FormMessage/>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -153,47 +162,47 @@ const ContactForm = ({ children }: contactProps) => {
                         <RadioGroup
                           onValueChange={field.onChange}
                           defaultValue={field.value}
-                           className="flex flex-col space-y-1"
+                          className="flex flex-col space-y-1"
                         >
                           <FormItem className="flex items-center space-x-3 space-y-0">
                             <FormControl>
-                              <RadioGroupItem value="yes"/>
+                              <RadioGroupItem value="yes" />
                             </FormControl>
                             <FormLabel className=" font-normal">YES</FormLabel>
                           </FormItem>
                           <FormItem className="flex items-center space-x-3 space-y-0">
                             <FormControl>
-                              <RadioGroupItem value="no"/>
+                              <RadioGroupItem value="no" />
                             </FormControl>
-                            <FormLabel className=" font-normal">NO <small>(default)</small></FormLabel>
+                            <FormLabel className=" font-normal">
+                              NO <small>(default)</small>
+                            </FormLabel>
                           </FormItem>
                         </RadioGroup>
                       </FormControl>
-                      <FormMessage/>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
             </div>
 
-          {/* Expectations Box */}
+            {/* Expectations Box */}
             <div className="flex items-center justify-between gap-16">
-              <TooltipWrapper>
-                <FormField
-                  control={form.control}
-                  name="expectations"
-                  render={({ field }) => (
-                    <FormItem className="w-full">
-                      <FormLabel>
-                        How do you envision using GenAIConnect in your software?
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea rows={10} />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-              </TooltipWrapper>
+              <FormField
+                control={form.control}
+                name="expectations"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormLabel>
+                      How do you envision using GenAIConnect in your software?
+                    </FormLabel>
+                    <FormControl>
+                      <Textarea rows={10} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
             </div>
 
             <DialogFooter>
