@@ -1,6 +1,6 @@
 "use client";
 import Header from "@/components/landing-page/header";
-import "./page.module.css"
+
 import { Button } from "@/components/ui/button";
 import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 import Hero from "@/components/landing-page/hero";
@@ -10,25 +10,14 @@ import Footer from "@/components/landing-page/footer";
 import Benefits from "@/components/landing-page/benefits";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import LineBreak from "@/components/line-break";
+import LineBreak from "@/components/global/line-break";
 
 
 export default function Home() {
   
 
-  
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Get the section ID from the URL
-      const sectionId = window.location.hash.substring(1);
-      console.log(sectionId);
-      ;
-    }
-    
-  }, [])
   return (
-    <main className="min-h-full ">
+    <main className="min-h-full">
       {/* bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-800 to-black */}
       <title>GenAIConnect - Coming Soon</title>
       <Header/>
@@ -43,19 +32,10 @@ export default function Home() {
         </Button>
       </center>
 
-      {/* Hero Section */}
       <Hero/>
-
-      {/* Features Section */}
-     {/* <Features/> */}
-
-      {/* Value Propositions Section */}
+     <Features/>
       <ValuePropositions/>
-
-      {/* Benefits Section */}
       {/* <Benefits/> */}
-
-      {/* Footer Section */}
       <Footer/>
 
       {/* Typeform Section */}

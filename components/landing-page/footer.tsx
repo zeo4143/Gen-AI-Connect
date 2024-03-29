@@ -1,8 +1,8 @@
 import { MdFacebook } from "react-icons/md";
-import LineBreak from "../line-break";
+import LineBreak from "../global/line-break";
 import { FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
-import Contact from "./contact";
+import ContactForm from "./contact-form";
 import { Button } from "../ui/button";
 
 import logo from "@/public/logo.png";
@@ -25,12 +25,12 @@ const Footer = () => {
           <small className="ml-5 px-1.5 absolute -top-2.5 bg-background rounded-[20px] text-[rgb(185,168,223)]">
             Contact
           </small>
-          <Contact>
+          <ContactForm>
             <Button
               variant="outline"
               className="px-6 py-8 w-[300px] lg:w-[400px] rounded-[50px] border-[rgb(185,168,223)]"
             ></Button>
-          </Contact>
+          </ContactForm>
           <FaSearch className="w-8 h-8 absolute top-1/2 right-6 -translate-y-1/2 text-[rgb(185,168,223)]" />
         </div>
       </div>
@@ -72,11 +72,11 @@ const Footer = () => {
           <p className=" cursor-pointer hover:text-[rgb(185,168,223)]">
             Data Privacy
           </p>
-          <Contact>
+          <ContactForm>
             <p className=" cursor-pointer hover:text-[rgb(185,168,223)]">
               Contact Us
             </p>
-          </Contact>
+          </ContactForm>
         </div>
 
         <div className="flex flex-wrap">
