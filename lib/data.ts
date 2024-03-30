@@ -1,4 +1,27 @@
 
+const navItems = [
+    {
+        title: "Home",
+        hash: "#home"
+    },
+    {
+        title: "Features",
+        hash: "#features"
+    },
+    {
+        title: "About",
+        hash: "#about"
+    },
+    {
+        title: "Pricing",
+        hash: "#pricing"
+    },
+    {
+        title: "Contact",
+        hash: "#contact"
+    },
+]
+
 const features = [
     
     {
@@ -28,4 +51,4 @@ const features = [
 ]
 
 
-export {features}
+export {navItems, features}

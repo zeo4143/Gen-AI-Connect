@@ -10,7 +10,7 @@ import defaultImage from "@/public/QuestionBoxImage.jpeg";
 const Features = () => {
   return (
     <section id="features" className="py-[20dvh] text-center">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-4">
         {features.map((feature, index) => (
           <div  key={index}>
             {/* className={`${[1,4,5].includes(index-1) ? ' grir' : 'text-clip'}`} */}

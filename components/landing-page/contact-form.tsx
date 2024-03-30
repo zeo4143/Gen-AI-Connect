@@ -50,8 +50,8 @@ const ContactForm = ({ children }: contactProps) => {
 
   return (
     <Dialog>
-      <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="h-[100vh] lg:h-[90vh] w-[100%] lg:w-[70dvw]">
+      <DialogTrigger asChild className="w-full">{children}</DialogTrigger>
+      <DialogContent className="h-[100vh] lg:h-[90vh] w-full lg:w-[70dvw]">
         <DialogHeader>
           <DialogTitle className="lg:text-5xl">Contact Us</DialogTitle>
           <DialogDescription className="py-2 ">

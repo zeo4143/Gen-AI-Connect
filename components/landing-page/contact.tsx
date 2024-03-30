@@ -9,7 +9,7 @@ import { Label } from '../ui/label'
 const Contact = () => {
   return (
     <section id='contact' className="py-[10vh] md:py-[25vh] lg:py-[50vh] relative w-[90%] sm:w-[80%] md:w-[60%] lg:w-1/2 mx-auto text-[rgb(185,168,223)] hover:text-white ">
-    <Label className="ml-6 my-4 absolute md:text-4xl text-inherit">
+    <Label className="ml-6 my-5 md:my-4 absolute text-2xl md:text-4xl text-inherit">
       Contact
     </Label>
     <ContactForm>
