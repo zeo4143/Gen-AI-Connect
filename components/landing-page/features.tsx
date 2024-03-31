@@ -9,11 +9,15 @@ import defaultImage from "@/public/QuestionBoxImage.jpeg";
 
 const Features = () => {
   return (
-    <section id="features" className="py-[20dvh] text-center">
-      <div className="grid md:grid-cols-2 gap-4">
+    <section id="features" className="py-[10dvh] text-center">
+      <div className="m-8 flex flex-wrap">
         {features.map((feature, index) => (
-          <div  key={index}>
-            {/* className={`${[1,4,5].includes(index-1) ? ' grir' : 'text-clip'}`} */}
+          <div
+            key={index}
+            className={`p-4 h-full w-full ${
+              [0, 3, 4].includes(index) ? "lg:w-3/5" : "lg:w-2/5"
+            }`}
+          >
             <FeatureCard
               title={feature.title}
               description={feature.description}
@@ -36,10 +40,8 @@ interface FeatureWrapperProps {
 
 const FeatureCard = ({ title, description, imageUrl }: FeatureWrapperProps) => {
   return (
-    <CardContainer>
-      <CardBody className="bg-gray-50 relative dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border ">
-        {/* Title of the Feature */}
-
+    <CardContainer className="w-full">
+      <CardBody className="bg-gray-50 relative dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border ">
         <CardItem
           translateZ={100}
           className=" text-xl font-bold text-neutral-600 dark:text-white"
@@ -47,17 +49,13 @@ const FeatureCard = ({ title, description, imageUrl }: FeatureWrapperProps) => {
           {title}
         </CardItem>
 
-        {/* Description of the feature */}
-
         <CardItem
           as="p"
           translateZ={50}
-          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+          className="text-neutral-500 text-sm  mt-2 dark:text-neutral-300"
         >
           {description}
         </CardItem>
-
-        {/* Image of the feature */}
 
         <CardItem
           // translateZ={70}

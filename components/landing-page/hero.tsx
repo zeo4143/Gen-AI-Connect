@@ -9,47 +9,22 @@ import { motion } from "framer-motion";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 
 function Hero() {
-  const words = [
-    {
-      text: "Power",
-      className: "text-xs md:text-3xl font-medium opacity-50",
-    },
-    {
-      text: "Your",
-      className: "text-xs md:text-3xl font-medium opacity-50",
-    },
-    {
-      text: "Software",
-      className: "text-xs md:text-3xl font-medium opacity-50",
-    },
-    {
-      text: "With",
-      className: "text-xs md:text-3xl font-medium opacity-50",
-    },
-    {
-      text: "Generative",
-      className: "text-xs md:text-3xl font-medium opacity-50",
-    },
-    {
-      text: "AI",
-      className: "text-xs md:text-3xl font-medium opacity-50",
-    },
-    {
-      text: "Capabilities",
-      className: "text-xs md:text-3xl font-medium opacity-50",
-    },
-    {
-      text: "Within",
-      className: "text-xs md:text-3xl font-medium opacity-50",
-    },
-    {
-      text: "Hours",
-      className: "text-xs md:text-3xl font-medium opacity-50",
-    },
-  ];
+  
   return (
-    <section id="hero" className="min-h-[50vh] p-4 text-center">
-      <div className="mt-4 p-4">
+    <section id="hero" className="h-[100vh] p-4 text-center">
+      <div className=" m-20 h-full flex flex-col justify-center">
+        {/* <center className="mb-12">
+          <Button
+            variant="secondary"
+            className="my-8 px-6 py-5 text-yellow-500 rounded-[20px]"
+          >
+            Coming Soon
+          </Button>
+          <p className="text-xs">
+            Recent completed Task: Added Animation to hero & TODO - Implentation
+            of grid on feature cards
+          </p>
+        </center> */}
         <div className="text-xl sm:text-2xl md:text-3xl font-bold flex justify-center items-center flex-wrap gap-2">
           <TextGenerateEffect
             words="Revolutionize Your"
@@ -58,7 +33,7 @@ function Hero() {
 
           <motion.span
             initial={{ opacity: 0, scale: 1.5, x: 50 }}
-            animate={{ opacity: 1, scale: 1, x:0 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ delay: 1.25, duration: 0.75 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-transparent bg-gradient-to-r  from-indigo-300 via-purple-300 to-rgb-185-168-22 bg-clip-text"
           >
@@ -82,9 +57,7 @@ function Hero() {
         >
           GenAIConnect
         </motion.p>
-      </div>
-
-      <motion.p
+        <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
         transition={{ delay: 4.5, duration: 0.5 }}
@@ -95,9 +68,9 @@ function Hero() {
       </motion.p>
 
       <motion.div
-      initial={{y:200}}
-      animate={{y:0}}
-      transition={{delay:5, duration:0.5}}
+        initial={{ y: 200, opacity:0 }}
+        animate={{ y: 0, opacity:1 }}
+        transition={{ delay: 5, duration: 0.5 }}
       >
         <Button
           size="lg"
@@ -107,6 +80,9 @@ function Hero() {
           <ArrowRightIcon className=" mt-0.5 ml-1 md:w-8 md:h-8" />
         </Button>
       </motion.div>
+      </div>
+
+      
     </section>
   );
 }

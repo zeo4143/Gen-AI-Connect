@@ -21,7 +21,7 @@ const ValuePropositions = () => {
               <strong className=" text-2xl sm:text-4xl">
                 Boost Efficiency
               </strong>
-              <p className="my-2 sm:text-xl opacity-50">
+              <p className="my-2 sm:text-xl opacity-80">
                 Standard software solutions can't always meet the unique needs
                 of every user. GenAIConnect enables legacy enterprise and SaaS
                 software providers to enhance their software's functionality by
@@ -36,7 +36,7 @@ const ValuePropositions = () => {
               <strong className=" text-2xl sm:text-4xl">
                 Stay Ahead of the Competition
               </strong>
-              <p className="my-2 sm:text-xl opacity-50">
+              <p className="my-2 sm:text-xl opacity-80">
                 Incorporating GenAIConnect into legacy SaaS platforms for
                 translating natural language into SQL queries is not just a
                 technological upgrade; it's a strategic move to enhance user
@@ -54,7 +54,7 @@ const ValuePropositions = () => {
               <strong className=" text-2xl sm:text-4xl">
                 Increase User Satisfaction
               </strong>
-              <p className="my-2 sm:text-xl opacity-50">
+              <p className="my-2 sm:text-xl opacity-80">
                 GenAIConnect enables intuitive end user interaction allowing
                 even users without technical expertise to interact with
                 Enterprise and SaaS software using simple, natural language.
@@ -69,7 +69,7 @@ const ValuePropositions = () => {
               <strong className=" text-2xl sm:text-4xl">
                 Save Development Time
               </strong>
-              <p className="my-2 sm:text-xl opacity-50">
+              <p className="my-2 sm:text-xl opacity-80">
                 The importance of saving development time through plug-and-play
                 GenAIConnect extends beyond mere efficiency gains. It
                 encapsulates cost savings, enhanced innovation, and a strategic
@@ -86,7 +86,7 @@ const ValuePropositions = () => {
               <strong className=" text-2xl sm:text-4xl">
                 Scale Your Software
               </strong>
-              <p className="my-2 sm:text-xl opacity-50">
+              <p className="my-2 sm:text-xl opacity-80">
                 GenAIConnect can easily scale with the business, accommodating
                 growing data volumes, applications and user demands without the
                 need for significant additional development. Companies can
