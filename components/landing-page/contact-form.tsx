@@ -1,7 +1,9 @@
 //  UI Done Functionality Needs to implement
+import { useRef } from "react";
 
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -33,12 +35,17 @@ import {
 } from "../ui/select";
 import { Textarea } from "../ui/textarea";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { getEarlyAccess } from "@/actions/get-early-access";
+
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface contactProps {
   children: React.ReactNode;
 }
 
 const ContactForm = ({ children }: contactProps) => {
+  const reCAPtchaRef = useRef<ReCAPTCHA>(null);
+
   const form = useForm<z.infer<typeof ContactSchema>>({
     resolver: zodResolver(ContactSchema),
     defaultValues: {
@@ -46,7 +53,13 @@ const ContactForm = ({ children }: contactProps) => {
     },
   });
 
-  const onSubmit = () => {};
+  const onSubmit = async (values: z.infer<typeof ContactSchema>) => {
+    const token = await reCAPtchaRef.current?.executeAsync();
+    console.log(token);
+    
+    reCAPtchaRef.current?.reset()
+    await getEarlyAccess(values, token!);
+  };
 
   return (
     <Dialog>
@@ -60,6 +73,7 @@ const ContactForm = ({ children }: contactProps) => {
             started.
           </DialogDescription>
         </DialogHeader>
+
         <Form {...form}>
           <form
             autoComplete="off"
@@ -116,6 +130,7 @@ const ContactForm = ({ children }: contactProps) => {
                   )}
                 />
               </div>
+
               {/* Software Information */}
               <div className="w-full flex flex-col gap-4">
                 <FormField
@@ -144,7 +159,7 @@ const ContactForm = ({ children }: contactProps) => {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="Enterprise">Enterprise</SelectItem>
-                          <SelectItem value="Saas">SaaS</SelectItem>
+                          <SelectItem value="SaaS">SaaS</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -198,14 +213,16 @@ const ContactForm = ({ children }: contactProps) => {
                       How do you envision using GenAIConnect in your software?
                     </FormLabel>
                     <FormControl>
-                      <Textarea rows={10} />
+                      <Textarea onChange={field.onChange} rows={10} />
                     </FormControl>
+                    <FormMessage />
                   </FormItem>
                 )}
               />
             </div>
 
             <DialogFooter>
+              <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} ref={reCAPtchaRef} size="invisible" badge="bottomleft" />
               <Button type="submit">Get Early Access</Button>
             </DialogFooter>
           </form>

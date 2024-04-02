@@ -9,8 +9,8 @@ export const ContactSchema = z.object({
         required_error : "Select the Enterprise Category"
     }),
     currentSoftwareIntegration: z.enum(["yes", "no"], {
-        required_error : "select either Yes or No"
+        required_error : "Select either Yes or No"
     }),
-    expectations: z.string()
+    expectations: z.string({required_error: "Brief Us for what purpose you need GenAIConnect"})
     
 })
