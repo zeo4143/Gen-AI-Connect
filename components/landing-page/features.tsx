@@ -66,7 +66,7 @@ const FeatureCard = ({ title, description, imageUrl }: FeatureWrapperProps) => {
             width={1000}
             height={1000}
             alt="Feature Image"
-            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+            className="hidden h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
           />
         </CardItem>
       </CardBody>

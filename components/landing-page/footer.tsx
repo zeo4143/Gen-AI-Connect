@@ -17,15 +17,15 @@ const Footer = () => {
           <Image src={logo} alt="GenAIConnect Logo" width={200} height={200} />
           <h1 className="text-3xl font-extrabold">GenAI Connect</h1>
           <div className="">
-            <p>info@genaiconnect.com</p>
-            <p>+1234567890</p>
-            <p>123 Street, City, Country</p>
+            <p>support@promohive.io</p>
+            {/* <p>+1234567890</p>
+            <p>123 Street, City, Country</p> */}
           </div>
         </div>
         {/* Add additional footer content for furture purpose */}
       </div>
 
-      <div className="flex items-center justify-center">
+      {/* <div className="flex items-center justify-center">
         <h3 className="hidden mr-4 font-medium">Follow Us: </h3>
         <div className="flex gap-4">
           <span className=" hover:text-[rgb(185,168,223)] cursor-pointer flex items-center text-xl font-medium">
@@ -45,7 +45,7 @@ const Footer = () => {
             <span className="hidden md:block">Twitter</span>
           </span>
         </div>
-      </div>
+      </div> */}
 
       <div className="my-4">
         <LineBreak />

@@ -12,10 +12,10 @@ const navItems = [
         title: "About",
         hash: "#about"
     },
-    {
-        title: "Pricing",
-        hash: "#pricing"
-    },
+    // {
+    //     title: "Pricing",
+    //     hash: "#pricing"
+    // },
     {
         title: "Contact",
         hash: "#contact"
@@ -26,11 +26,11 @@ const features = [
     
     {
         title : "GenAI Question Box",
-        description : "Instantly translate user queries into SQL, JSON or backend database queries"
+        description : "Instantly translate user queries into SQL, JSON or backend database queries and visualize results"
     },
     {
         title : "Quick and Seamless Integration",
-        description : "Easily integrate GenAIConnect within hours."
+        description : "Easily integrate GenAIConnect with your software within hours."
     },
     {
         title : "Accurate Results",
@@ -42,7 +42,7 @@ const features = [
     },
     {
         title : "Reduce Complexity of Tech Stack",
-        description : "Reduce complexity of the application tech stack by offloading GenerativeAI capabilities to GenAIConnect."
+        description : "Reduce complexity of the application tech stack by offloading GenerativeAI capabilities to Us."
     },
     {
         title : "Scalable Solution",

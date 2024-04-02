@@ -7,12 +7,12 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { motion } from "framer-motion";
 import { TypewriterEffect } from "../ui/typewriter-effect";
+import ContactForm from "./contact-form";
 
 function Hero() {
-  
   return (
     <section id="hero" className="h-[100vh] p-4 text-center">
-      <div className=" m-20 h-full flex flex-col justify-center">
+      <div className=" lg:m-20 h-full flex flex-col justify-center">
         {/* <center className="mb-12">
           <Button
             variant="secondary"
@@ -58,31 +58,32 @@ function Hero() {
           GenAIConnect
         </motion.p>
         <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ delay: 4.5, duration: 0.5 }}
-        className="text-xs md:text-3xl font-medium opacity-50"
-      >
-        Power Your Software with Generative AI Capabilities{" "}
-        <br className="hidden md:block" /> within Hours{" "}
-      </motion.p>
-
-      <motion.div
-        initial={{ y: 200, opacity:0 }}
-        animate={{ y: 0, opacity:1 }}
-        transition={{ delay: 5, duration: 0.5 }}
-      >
-        <Button
-          size="lg"
-          className=" my-4 md:my-8 md:px-10 md:py-9 text-xs md:text-2xl font-semibold rounded-[50px] text-[#5026AE] bg-[rgb(185,168,223)] hover:bg-[rgb(185,168,223,0.5)] hover:text-black"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ delay: 4.5, duration: 0.5 }}
+          className="text-xs md:text-3xl font-medium opacity-50"
         >
-          <span>Get Early Access</span>
-          <ArrowRightIcon className=" mt-0.5 ml-1 md:w-8 md:h-8" />
-        </Button>
-      </motion.div>
-      </div>
+          Power Your Software with Generative AI Capabilities
+          <br className="hidden lg:block" />
+          within Hours
+        </motion.p>
 
-      
+        <motion.div
+          initial={{ y: 200, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 5, duration: 0.5 }}
+        >
+          <ContactForm>
+            <Button
+              size="lg"
+              className=" my-4 md:my-8 md:px-10 md:py-9 text-xs md:text-2xl font-semibold rounded-[50px] text-[#5026AE] bg-[rgb(185,168,223)] hover:bg-[rgb(185,168,223,0.5)] hover:text-black"
+            >
+              <span>Get Early Access</span>
+              <ArrowRightIcon className=" mt-0.5 ml-1 md:w-8 md:h-8" />
+            </Button>
+          </ContactForm>
+        </motion.div>
+      </div>
     </section>
   );
 }
