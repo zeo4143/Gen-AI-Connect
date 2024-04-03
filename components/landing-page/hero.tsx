@@ -11,7 +11,7 @@ import ContactForm from "./contact-form";
 
 function Hero() {
   return (
-    <section id="hero" className="h-[100vh] p-4 text-center">
+    <section id="home" className="h-[100vh] p-4 text-center">
       <div className=" lg:m-20 h-full flex flex-col justify-center">
         {/* <center className="mb-12">
           <Button

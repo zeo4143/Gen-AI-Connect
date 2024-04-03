@@ -10,7 +10,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-[10vh] md:py-[25vh] lg:py-[50vh] w-[90%] sm:w-[80%] md:w-[60%] lg:w-1/2 mx-auto "
+      className="py-[10vh] h-[100dvh] md:py-[25vh] lg:py-[50vh] w-[90%] sm:w-[80%] md:w-[60%] lg:w-1/2 mx-auto "
     >
       <ContactForm>
         <div className="relative text-[rgb(185,168,223)] hover:text-white ">

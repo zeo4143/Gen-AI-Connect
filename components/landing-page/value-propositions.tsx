@@ -2,7 +2,7 @@
 
 const ValuePropositions = () => {
   return (
-    <section id="about" className="py-[100px]">
+    <section id="about" className="py-[200px]">
       <div className="p-7">
         <div className="md:mx-[5vh] flex justify-between flex-wrap gap-20 ">
           <div className=" relative pt-20">

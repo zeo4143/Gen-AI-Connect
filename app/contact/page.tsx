@@ -1,50 +1,36 @@
-//  UI Done Functionality Needs to implement
-import { useRef, useState } from "react";
+"use client"
+
+import { getEarlyAccess } from '@/actions/get-early-access'
+import ContactForm from '@/components/landing-page/contact-form'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { ContactSchema } from '@/schemas/contact'
+import { zodResolver } from '@hookform/resolvers/zod'
+import React, { useRef, useState } from 'react'
+import ReCAPTCHA from 'react-google-recaptcha'
+import { useForm } from 'react-hook-form'
+import * as z from "zod"
 
 import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "../ui/dialog";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../ui/form";
-import { useForm } from "react-hook-form";
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+  } from "@/components/ui/form";
+import { Input } from '@/components/ui/input'
+import {  Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,} from '@/components/ui/select'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import { Textarea } from '@/components/ui/textarea'
 
-import * as z from "zod";
-import { ContactSchema } from "@/schemas/contact";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import { Textarea } from "../ui/textarea";
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { getEarlyAccess } from "@/actions/get-early-access";
+const ContactUs = () => {
 
-import ReCAPTCHA from "react-google-recaptcha";
-
-interface contactProps {
-  children: React.ReactNode;
-}
-
-const ContactForm = ({ children }: contactProps) => {
-  const [error, setError] = useState<string | undefined>("");
+    const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPuzzleAssigned, setIsPuzzleAssigned] = useState<boolean>(false);
   const [isFormsubmittimg, setIsFormsubmittimg] = useState<boolean>(false);
@@ -84,24 +70,20 @@ const ContactForm = ({ children }: contactProps) => {
       setIsFormsubmittimg(false);
     });
   };
-
-  // if (isPuzzleAssigned) return;
-
   return (
-    <>
-      {!isPuzzleAssigned && (
-        <Dialog>
-          <DialogTrigger asChild>{children}</DialogTrigger>
-          <DialogContent className="h-[100vh] lg:h-[90vh] w-full lg:w-[70dvw]">
-            <DialogHeader>
-              <DialogTitle className="lg:text-5xl">Contact Us</DialogTitle>
-              <DialogDescription className="py-2 ">
-                Thank you for your interest in GenAIConnect! We're excited to
+    <div className='max-h-[100vh] flex items-center justify-center'>
+      <Card className='h-[90%]  w-full lg:w-[80dvw] overflow-y-auto'>
+        <CardHeader>
+            <CardTitle className="lg:text-5xl">
+            Contact Us
+            </CardTitle>
+            <CardDescription className="py-2 ">
+            Thank you for your interest in GenAIConnect! We're excited to
                 have you on board. Please provide us with some information to
                 get started.
-              </DialogDescription>
-            </DialogHeader>
+            </CardDescription>
 
+            <CardContent className="p-0">
             {success ? (
               <div className="flex justify-center">
                 Fom submitted succesfully
@@ -271,7 +253,7 @@ const ContactForm = ({ children }: contactProps) => {
                       />
                     </div>
 
-                    <DialogFooter>
+                    <CardFooter className='px-0 flex justify-end'>
                       <ReCAPTCHA
                         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                         ref={reCAPtchaRef}
@@ -280,17 +262,17 @@ const ContactForm = ({ children }: contactProps) => {
                         onChange={handlePuzzleAssigned}
                        
                       />
-                      <Button type="submit">Get Early Access</Button>
-                    </DialogFooter>
+                      <Button size="lg" type="submit">Get Early Access</Button>
+                    </CardFooter>
                   </form>
                 </Form>
               </>
             )}
-          </DialogContent>
-        </Dialog>
-      )}
-    </>
-  );
-};
+            </CardContent>
+        </CardHeader>
+      </Card>
+    </div>
+  )
+}
 
-export default ContactForm;
+export default ContactUs

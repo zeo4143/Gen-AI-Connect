@@ -11,6 +11,7 @@ export const getEarlyAccess = async (values: z.infer<typeof ContactSchema>, toke
     const human = validateHuman(token)
 
     if(!human) {
+        
         return {
             error : "You are not authorized Bot"
         }
@@ -30,7 +31,7 @@ export const getEarlyAccess = async (values: z.infer<typeof ContactSchema>, toke
     // configure data to the database or send  data to email 
 
     return {
-        success: ""
+        success: "success"
     }
     
 

@@ -12,13 +12,11 @@ import Contact from "@/components/landing-page/contact";
 export default function Home() {
   return (
     <main className="min-h-full">
-      <title>GenAIConnect - Coming Soon</title>
-      <Header />
+      <title>GenAIConnect - Coming Soon</title>  
       <Hero />
       <Features />
       <ValuePropositions />
       <Contact />
-      <Footer />
     </main>
   );
 }

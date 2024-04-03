@@ -7,6 +7,7 @@ import Image from "next/image";
 import logo from "@/public/logo.png";
 import { navItems } from "@/lib/data";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -28,14 +29,23 @@ const Header = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 6, duration: 0.5 }}
+        transition={{ duration: 0.5 }}
         className="p-4  shadow-lg backdrop-blur-sm flex items-center justify-around flex-wrap gap-4"
       >
         <div className="w-full lg:w-fit flex items-center justify-between">
-          <div className="flex items-center">
-            <Image src={logo} alt="GenAIConnect Logo" width={50} height={50} />
-            <h1 className="text-xl sm:text-2xl font-semibold">GenAIConnect</h1>
-          </div>
+          <Link href={"/#home"}>
+            <div className="flex items-center cursor-pointer">
+              <Image
+                src={logo}
+                alt="GenAIConnect Logo"
+                width={50}
+                height={50}
+              />
+              <h1 className="text-xl sm:text-2xl font-semibold">
+                GenAIConnect
+              </h1>
+            </div>
+          </Link>
           {!isIconchanged ? (
             <HamburgerMenuIcon
               className="w-6 h-6 lg:hidden cursor-pointer"
