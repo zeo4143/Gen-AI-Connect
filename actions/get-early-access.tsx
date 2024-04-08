@@ -18,7 +18,7 @@ export const getEarlyAccess = async (values: z.infer<typeof ContactSchema>, toke
     }
 
 
-    const validatedFields = ContactSchema.safeParse(values)
+    const validatedFields =  ContactSchema.safeParse(values)
 
     if(!validatedFields.success) {
         return {
@@ -29,13 +29,16 @@ export const getEarlyAccess = async (values: z.infer<typeof ContactSchema>, toke
     const {...data} = validatedFields.data
 
     // configure data to the database or send  data to email 
-
+    console.log(data);
+    
     return {
         success: "success"
     }
     
 
 }
+
+
 
 const validateHuman = async (token:string):Promise<boolean> => {
     const secret = process.env.RECAPTCHA_SECRET_KEY

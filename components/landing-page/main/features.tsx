@@ -1,7 +1,7 @@
 //TODO - Implemnet Grid & adjust FeatureCard widths and heights
 
 import { features } from "@/lib/data";
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import { CardBody, CardContainer, CardItem } from "../../ui/3d-card";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ import defaultImage from "@/public/QuestionBoxImage.jpeg";
 
 const Features = () => {
   return (
-    <section id="features" className="py-[10dvh] text-center">
+    <section id="features" className="py-[10dvh]  text-center">
       <div className="m-8 flex flex-wrap">
         {features.map((feature, index) => (
           <div

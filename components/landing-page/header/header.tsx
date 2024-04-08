@@ -25,7 +25,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full fixed z-50">
+    <header className="w-full fixed top-0 left-0 z-50">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

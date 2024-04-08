@@ -1,9 +1,11 @@
 import React from 'react'
 
-const page = () => {
+const Test = ({children}: {children: React.ReactNode}) => {
   return (
-    <div>page</div>
+    <div>
+      <div>{children}</div>
+    </div>
   )
 }
 
-export default page
+export default Test

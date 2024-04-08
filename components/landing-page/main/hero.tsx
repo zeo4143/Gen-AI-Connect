@@ -2,29 +2,16 @@
 // Next Task - Animation, positioning
 
 import React from "react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
-import { motion } from "framer-motion";
-import { TypewriterEffect } from "../ui/typewriter-effect";
-import ContactForm from "./contact-form";
+import { TextGenerateEffect } from "../../ui/text-generate-effect";
+import { motion} from "framer-motion";
+import ContactForm from "../contact-form";
 
-function Hero() {
+const Hero = () => {
   return (
     <section id="home" className="h-[100vh] p-4 text-center">
-      <div className=" lg:m-20 h-full flex flex-col justify-center">
-        {/* <center className="mb-12">
-          <Button
-            variant="secondary"
-            className="my-8 px-6 py-5 text-yellow-500 rounded-[20px]"
-          >
-            Coming Soon
-          </Button>
-          <p className="text-xs">
-            Recent completed Task: Added Animation to hero & TODO - Implentation
-            of grid on feature cards
-          </p>
-        </center> */}
+      <div className="h-full flex flex-col justify-center">
         <div className="text-xl sm:text-2xl md:text-3xl font-bold flex justify-center items-center flex-wrap gap-2">
           <TextGenerateEffect
             words="Revolutionize Your"
@@ -76,7 +63,7 @@ function Hero() {
           <ContactForm>
             <Button
               size="lg"
-              className=" my-4 md:my-8 md:px-10 md:py-9 text-xs md:text-2xl font-semibold rounded-[50px] text-[#5026AE] bg-[rgb(185,168,223)] hover:bg-[rgb(185,168,223,0.5)] hover:text-black"
+              className=" my-4 w-fit md:my-8 md:px-10 md:py-9 text-xs md:text-2xl font-semibold rounded-[50px] text-[#5026AE] bg-[rgb(185,168,223)] hover:bg-[rgb(185,168,223,0.5)] hover:text-black"
             >
               <span>Get Early Access</span>
               <ArrowRightIcon className=" mt-0.5 ml-1 md:w-8 md:h-8" />

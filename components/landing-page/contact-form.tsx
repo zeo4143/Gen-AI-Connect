@@ -58,14 +58,7 @@ const ContactForm = ({ children }: contactProps) => {
     },
   });
 
-  const handlePuzzleAssigned = async (token:string|undefined|null) => {
-    if(token) {
-      setIsPuzzleAssigned(false)
-    } else {
-      setIsPuzzleAssigned(true)
-    }
-  }
-
+ 
   const onSubmit = async (values: z.infer<typeof ContactSchema>) => {
     setIsFormsubmittimg(true);
     setError("");
@@ -74,15 +67,15 @@ const ContactForm = ({ children }: contactProps) => {
     const token = await reCAPtchaRef.current?.executeAsync();
     reCAPtchaRef.current?.reset();
 
-    await handlePuzzleAssigned(token)
 
     getEarlyAccess(values, token!).then((data) => {
-      console.log(data);
-
       setError(data.error);
       setSuccess(data.success);
       setIsFormsubmittimg(false);
     });
+
+    console.log(success);
+    
   };
 
   // if (isPuzzleAssigned) return;
@@ -90,8 +83,10 @@ const ContactForm = ({ children }: contactProps) => {
   return (
     <>
       {!isPuzzleAssigned && (
-        <Dialog>
-          <DialogTrigger asChild>{children}</DialogTrigger>
+        <Dialog
+        // modal={false}
+        >
+          <DialogTrigger asChild className="w-full">{children}</DialogTrigger>
           <DialogContent className="h-[100vh] lg:h-[90vh] w-full lg:w-[70dvw]">
             <DialogHeader>
               <DialogTitle className="lg:text-5xl">Contact Us</DialogTitle>
@@ -276,9 +271,7 @@ const ContactForm = ({ children }: contactProps) => {
                         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                         ref={reCAPtchaRef}
                         size="invisible"
-                        badge="bottomleft"
-                        onChange={handlePuzzleAssigned}
-                       
+                        badge="bottomleft"                       
                       />
                       <Button type="submit">Get Early Access</Button>
                     </DialogFooter>

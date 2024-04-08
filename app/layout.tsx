@@ -1,24 +1,26 @@
-"use client"
+"use client";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import Header from "@/components/landing-page/header";
-import Footer from "@/components/landing-page/footer";
+import Header from "@/components/landing-page/header/header";
+import Footer from "@/components/landing-page/footer/footer";
+import React from "react";
+import { useTheme } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const { theme, setTheme } = useTheme();
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.className} `}
+        className={`${inter.className} relative`}
         // bg-gray-50 text-gray-950 relative dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90
       >
         {/* <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
@@ -30,9 +32,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header/>
-          {children}
-          <Footer/>
+          <Header />
+          <main className="mt-20 flex flex-col items-center justify-center">
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

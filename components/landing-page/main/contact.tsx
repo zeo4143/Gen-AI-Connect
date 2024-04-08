@@ -1,16 +1,16 @@
 // Done ✅✅
 
 import React from "react";
-import ContactForm from "./contact-form";
-import { Button } from "../ui/button";
+import ContactForm from "../contact-form";
+import { Button } from "../../ui/button";
 import { FaSearch } from "react-icons/fa";
-import { Label } from "../ui/label";
+import { Label } from "../../ui/label";
 
 const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-[10vh] h-[100dvh] md:py-[25vh] lg:py-[50vh] w-[90%] sm:w-[80%] md:w-[60%] lg:w-1/2 mx-auto "
+      className="py-[10vh] h-[100dvh] md:py-[25vh] lg:py-[50vh] w-[90%] sm:w-[80%] md:w-[60%] lg:w-1/2 mx-auto flex items-center "
     >
       <ContactForm>
         <div className="relative text-[rgb(185,168,223)] hover:text-white ">

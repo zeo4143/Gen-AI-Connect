@@ -1,6 +1,9 @@
 // TODO - Animation
 
+
+
 const ValuePropositions = () => {
+  
   return (
     <section id="about" className="py-[200px]">
       <div className="p-7">
@@ -16,12 +19,14 @@ const ValuePropositions = () => {
             </div>
           </div>
 
-          <div className="lg:pt-[70dvh] flex-1">
+          <div
+          
+          className="lg:pt-[70dvh] flex-1">
             <div className="mb-[10vh] lg:mb-[20vh]">
-              <strong className=" text-2xl sm:text-4xl">
+              <p className=" text-2xl sm:text-4xl">
                 Boost Efficiency
-              </strong>
-              <p className="my-2 sm:text-xl opacity-80">
+              </p>
+              <p className="pt-5 leading-[2em] tracking-wider text-[#999999]">
                 Standard software solutions can't always meet the unique needs
                 of every user. GenAIConnect enables legacy enterprise and SaaS
                 software providers to enhance their software's functionality by
