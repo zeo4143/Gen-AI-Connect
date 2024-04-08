@@ -3,20 +3,35 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme/theme-provider";
+
+import * as React from "react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { type ThemeProviderProps } from "next-themes/dist/types";
+
 import Header from "@/components/landing-page/header/header";
 import Footer from "@/components/landing-page/footer/footer";
-import React from "react";
-import { useTheme } from "next-themes";
+
+
+
+
+
+
 
 const inter = Inter({ subsets: ["latin"] });
+
+
+
+
+const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+};
+
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { theme, setTheme } = useTheme();
   return (
     <html lang="en" className="scroll-smooth">
       <body

@@ -1,5 +1,7 @@
 // TODO - Animation
 
+import { valuePropositions } from "@/lib/data";
+
 
 
 const ValuePropositions = () => {
@@ -22,7 +24,17 @@ const ValuePropositions = () => {
           <div
           
           className="lg:pt-[70dvh] flex-1">
-            <div className="mb-[10vh] lg:mb-[20vh]">
+            {valuePropositions.map(({ title, info }, index) => (
+              <div key={index} className={`mb-${index === valuePropositions.length - 1 ? '0' : '[10vh] lg:[20vh]'}`}>
+              <p className=" text-2xl sm:text-4xl">
+                {title}
+              </p>
+              <p className="pt-5 leading-[2em] tracking-wider text-[#999999]">
+                {info}
+              </p>
+            </div>
+            ))}
+            {/* <div className="mb-[10vh] lg:mb-[20vh]">
               <p className=" text-2xl sm:text-4xl">
                 Boost Efficiency
               </p>
@@ -98,7 +110,7 @@ const ValuePropositions = () => {
                 quickly adopt new AI technologies as they evolve, keeping their
                 software offerings at the cutting edge.
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

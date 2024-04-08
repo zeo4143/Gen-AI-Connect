@@ -50,6 +50,33 @@ const features = [
     },
 ]
 
+const valuePropositions = [
+    {
+        title : "Boost Efficiency",
+        info: "Standard software solutions can't always meet the unique needs of every user. GenAIConnect enables legacy enterprise and SaaS software providers to enhance their software's functionality by providing customized Generative AI powered user experiences. There is a significant boost in operational efficiency as users without technical expertise can interact with complex databases using simple natural language."
+    },
+
+    {
+        title : "Stay Ahead of the Competition",
+        info: "Incorporating GenAIConnect into legacy SaaS platforms for translating natural language into SQL queries is not just a technological upgrade; it's a strategic move to enhance user engagement, operational efficiency, and data-driven decision-making. This innovation positions companies to be more adaptable, responsive, and competitive in their respectiv markets. By enabling businesses to quickly and efficiently integrate Generative AI capabilities, they can stay ahead in the fast-paced digital landscape, responding to market demands and customer needs with unprecedented speed and flexibility."
+    },
+
+    {
+        title : "Increase User Satisfaction",
+        info: "GenAIConnect enables intuitive end user interaction allowing even users without technical expertise to interact with Enterprise and SaaS software using simple, natural language. This breaks down barriers to data access and analysis, making the software more accessible to a broader audience. Increased data accessibility and democratization leads to increased user satisfaction and retention."
+    },
+
+    {
+        title : "Save Development Time",
+        info: "The importance of saving development time through plug-and-play GenAIConnect extends beyond mere efficiency gains. It encapsulates cost savings, enhanced innovation, and a strategic focus on core business values. In an era where speed to market and agility are paramount, these solutions offer a clear path to maintaining a competitive edge, fostering growth, and driving digital transformation. With GenAIConnect , legacy software can adopt advanced Generative AI capabilities without the prohibitive costs traditionally associated with AI development"
+    },
+
+    {
+        title : "Scale Your Software",
+        info: "GenAIConnect can easily scale with the business, accommodating growing data volumes, applications and user demands without the need for significant additional development. Companies can quickly adopt new AI technologies as they evolve, keeping their software offerings at the cutting edge."
+    },
+]
+
 const footer = [
     {
         title: "Privacy Policy",
@@ -61,7 +88,7 @@ const footer = [
     },
     {
         title: "Contact Us",
-        link: "/contact-us"
+        link: "/#contact"
     },
 ]
 
@@ -531,4 +558,4 @@ const termsOfServices = [
 ]
 
 
-export { navItems, features, footer, privacyPolicy, termsOfServices }
+export { navItems, features, valuePropositions, footer, privacyPolicy, termsOfServices }
